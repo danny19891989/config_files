@@ -1,0 +1,3 @@
+C:\Windows\System32
+%USERPROFILE%
+%USERPROFILE%\OneDrive\Desktop

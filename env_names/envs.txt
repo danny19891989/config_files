@@ -1,0 +1,7 @@
+path
+
+%USERPROFILE%\AppData\Local\Programs\Python\Python311\Scripts\
+%USERPROFILE%\AppData\Local\Programs\Python\Python311\
+%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Program Files\WindowsTerminal\
