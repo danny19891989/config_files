@@ -45,6 +45,5 @@
   "editor.accessibilitySupport": "off",
   "terminal.external.windowsExec": "C:\\Windows\\terminal-1.18.1462.0\\wt.exe",
   "workbench.editor.splitInGroupLayout": "vertical",
-  "workbench.editor.pinnedTabsOnSeparateRow": true,
-  "editor.multiCursorModifier": "ctrlCmd"
+  "workbench.editor.pinnedTabsOnSeparateRow": true
 }

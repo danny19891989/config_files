@@ -890,7 +890,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+3",
+    "key": "ctrl+shift+q",
     "command": "workbench.action.toggleEditorGroupLayout"
   },
   {
@@ -1039,7 +1039,7 @@
     "when": "editorTextFocus && editorLangId == 'rust'"
   },
   {
-    "key": "ctrl+shift+q",
+    "key": "ctrl+shift+3",
     "command": "editor.action.autoFix",
     "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
   },
@@ -1470,7 +1470,7 @@
     "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
   },
   {
-    "key": "alt+u",
+    "key": "alt+n",
     "command": "editor.action.marker.prev",
     "when": "editorFocus"
   },
@@ -1480,7 +1480,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "alt+i",
+    "key": "alt+m",
     "command": "editor.action.marker.next",
     "when": "editorFocus"
   },
@@ -1667,7 +1667,7 @@
     "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
   },
   {
-    "key": "ctrl+k",
+    "key": "alt+y",
     "command": "editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
   },
@@ -1953,5 +1953,35 @@
     "key": "f3",
     "command": "-editor.action.nextMatchFindAction",
     "when": "editorFocus"
+  },
+  {
+    "key": "alt+i",
+    "command": "editor.action.moveSelectionToNextFindMatch"
+  },
+  {
+    "key": "alt+u",
+    "command": "editor.action.moveSelectionToPreviousFindMatch"
+  },
+  {
+    "key": "shift+alt+n",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+m",
+    "command": "editor.action.marker.nextInFiles"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "-redo"
+  },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.action.openRecent"
   }
 ]
