@@ -538,7 +538,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "shift+alt+q",
+    "key": "shift+alt+j",
     "command": "notifications.toggleList"
   },
   {
@@ -1039,11 +1039,6 @@
     "when": "editorTextFocus && editorLangId == 'rust'"
   },
   {
-    "key": "ctrl+shift+3",
-    "command": "editor.action.autoFix",
-    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
-  },
-  {
     "key": "shift+alt+.",
     "command": "-editor.action.autoFix",
     "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
@@ -1259,7 +1254,7 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+shift+2",
+    "key": "ctrl+shift+3",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
@@ -1319,7 +1314,7 @@
     "when": "terminalFindInputFocused && terminalHasBeenCreated || terminalFindInputFocused && terminalProcessSupported"
   },
   {
-    "key": "ctrl+shift+b",
+    "key": "ctrl+alt+k",
     "command": "workbench.output.action.clearOutput"
   },
   {
@@ -1418,10 +1413,6 @@
     "key": "ctrl+shift+i",
     "command": "-workbench.action.quickchat.toggle",
     "when": "hasChatProvider"
-  },
-  {
-    "key": "shift+alt+v",
-    "command": "workbench.action.showCommands"
   },
   {
     "key": "f1",
@@ -1530,7 +1521,7 @@
     "command": "-workbench.action.replaceInFiles"
   },
   {
-    "key": "ctrl+shift+h",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.replaceInFiles"
   },
   {
@@ -1594,10 +1585,6 @@
     "key": "ctrl+shift+a",
     "command": "-notification.acceptPrimaryAction",
     "when": "notificationFocus"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "editor.action.formatDocument"
   },
   {
     "key": "f8",
@@ -1719,7 +1706,7 @@
     "when": "accessibilityHelpIsShown"
   },
   {
-    "key": "ctrl+alt+q",
+    "key": "shift+alt+h",
     "command": "workbench.action.files.toggleActiveEditorReadonlyInSession"
   },
   {
@@ -1738,7 +1725,7 @@
     "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
   },
   {
-    "key": "ctrl+shift+j",
+    "key": "ctrl+alt+m",
     "command": "workbench.actions.view.problems",
     "when": "workbench.panel.markers.view.active"
   },
@@ -1748,7 +1735,7 @@
     "when": "workbench.panel.markers.view.active"
   },
   {
-    "key": "ctrl+shift+m",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.output.toggleOutput",
     "when": "workbench.panel.output.active"
   },
@@ -1800,7 +1787,7 @@
     "command": "-workbench.action.focusBelowGroup"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "shift+alt+q",
     "command": "workbench.action.joinAllGroups"
   },
   {
@@ -1871,7 +1858,7 @@
     "command": "-workbench.action.splitEditorOrthogonal"
   },
   {
-    "key": "ctrl+alt+j",
+    "key": "ctrl+alt+q",
     "command": "workbench.action.moveEditorToPreviousGroup"
   },
   {
@@ -1983,5 +1970,50 @@
   {
     "key": "ctrl+alt+p",
     "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+shift+2",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+up",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "escape",
+    "command": "-notifications.hideToasts",
+    "when": "notificationFocus && notificationToastsVisible"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.openPreviousEditorFromHistory"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "notifications.clearAll"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "editor.action.formatDocument.multiple"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "editor.action.formatDocument"
+  },
+  {
+    "key": "shift+alt+v",
+    "command": "workbench.action.toggleLightDarkThemes"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
   }
 ]

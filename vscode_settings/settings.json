@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "workbench.editor.openPositioning": "left",
   "workbench.sideBar.location": "right",
   "security.workspace.trust.untrustedFiles": "open",
@@ -33,8 +33,10 @@
   "notebook.lineNumbers": "on",
   "python.interpreter.infoVisibility": "always",
   "AREPL.whenToExecute": "onKeybinding",
-  "AREPL.unsafeKeywords": ["rmdir\\(", "rmtree\\("],
-  "workbench.colorTheme": "Plastic",
+  "AREPL.unsafeKeywords": [
+    "rmdir\\(",
+    "rmtree\\("
+  ],
   "workbench.activityBar.location": "hidden",
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -45,5 +47,7 @@
   "editor.accessibilitySupport": "off",
   "terminal.external.windowsExec": "C:\\Windows\\terminal-1.18.1462.0\\wt.exe",
   "workbench.editor.splitInGroupLayout": "vertical",
-  "workbench.editor.pinnedTabsOnSeparateRow": true
+  "editor.stickyScroll.enabled": false,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "editor.defaultFormatter": "ms-python.black-formatter"
 }
