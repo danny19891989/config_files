@@ -49,5 +49,6 @@
   "workbench.editor.splitInGroupLayout": "vertical",
   "editor.stickyScroll.enabled": false,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
-  "editor.defaultFormatter": "ms-python.black-formatter"
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.hover.enabled": false
 }

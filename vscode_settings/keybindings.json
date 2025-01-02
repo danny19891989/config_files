@@ -542,10 +542,6 @@
     "command": "notifications.toggleList"
   },
   {
-    "key": "ctrl+g",
-    "command": "editor.action.goToDeclaration"
-  },
-  {
     "key": "shift+f12",
     "command": "-editor.action.goToReferences",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
@@ -556,7 +552,7 @@
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "ctrl+t",
+    "key": "ctrl+f",
     "command": "editor.toggleFold",
     "when": "editorTextFocus && foldingEnabled"
   },
@@ -613,7 +609,7 @@
     "command": "workbench.action.terminal.kill"
   },
   {
-    "key": "ctrl+alt+5",
+    "key": "ctrl+shift+k",
     "command": "python.execInDedicatedTerminal"
   },
   {
@@ -654,7 +650,7 @@
     "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
   },
   {
-    "key": "shift+alt+7",
+    "key": "ctrl+shift+7",
     "command": "workbench.action.gotoSymbol"
   },
   {
@@ -1289,16 +1285,6 @@
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.terminal.focusFind",
-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "-workbench.action.terminal.focusFind",
-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
     "key": "shift+escape",
     "command": "-workbench.action.terminal.hideFind",
     "when": "terminalFindVisible && terminalFocus && terminalHasBeenCreated || terminalFindVisible && terminalFocus && terminalProcessSupported"
@@ -1419,7 +1405,7 @@
     "command": "-workbench.action.showCommands"
   },
   {
-    "key": "shift+alt+8",
+    "key": "ctrl+shift+8",
     "command": "workbench.action.showAllSymbols"
   },
   {
@@ -1639,11 +1625,6 @@
     "when": "hasSymbols"
   },
   {
-    "key": "f12",
-    "command": "-goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
     "key": "ctrl+x",
     "command": "workbench.action.terminal.copyAndClearSelection",
     "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
@@ -1849,11 +1830,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+f12",
-    "command": "-editor.action.goToImplementation",
-    "when": "editorHasImplementationProvider && editorTextFocus"
-  },
-  {
     "key": "ctrl+k ctrl+\\",
     "command": "-workbench.action.splitEditorOrthogonal"
   },
@@ -2007,7 +1983,7 @@
     "command": "workbench.action.toggleLightDarkThemes"
   },
   {
-    "key": "ctrl+shift+k",
+    "key": "ctrl+alt+5",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
   },
@@ -2015,5 +1991,13 @@
     "key": "ctrl+.",
     "command": "-editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.navigateBackInEditLocations"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.navigateForwardInEditLocations"
   }
 ]
