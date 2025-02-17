@@ -1997,7 +1997,27 @@
     "command": "workbench.action.navigateBackInEditLocations"
   },
   {
+    "key": "shift+alt+f",
+    "command": "editor.action.autoFix"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "alt+left",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
     "key": "ctrl+t",
-    "command": "workbench.action.navigateForwardInEditLocations"
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "alt+right",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
   }
 ]

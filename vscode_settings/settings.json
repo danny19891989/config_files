@@ -45,7 +45,6 @@
   "terminal.integrated.letterSpacing": 1,
   "editor.letterSpacing": 1,
   "editor.accessibilitySupport": "off",
-  "terminal.external.windowsExec": "C:\\Windows\\terminal-1.18.1462.0\\wt.exe",
   "workbench.editor.splitInGroupLayout": "vertical",
   "editor.stickyScroll.enabled": false,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
