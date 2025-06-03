@@ -155,6 +155,8 @@ F12 & sc02d:: run, c:\windows\system32\taskmgr.exe
 return
 
 ;tools
+F12 & sc014:: run, "C:\Windows\explorer.exe" "ms-availablenetworks:"
+return
 F12 & sc021::run, c:\windows\system32\calc.exe
 return
 F12 & sc022::run, c:\windows\system32\notepad.exe
