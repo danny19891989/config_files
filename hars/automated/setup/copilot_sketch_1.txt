@@ -1,0 +1,87 @@
+This project consists of 4 files (5 files including the readme.txt file, to be exact).
+More precisely, the files are the following:
+custom.ico
+english.ahk
+persian.ahk
+setup_winvim.ps1
+
+When I run setup_winvim.ps1 in elevated mode, it simply copies english.ahk and persian.ahk into the directory "c:\custom\" and makes a task called "ElevatedAHK" which actually runs english.ahk at log on of any user in elevated mode.
+It also creates a desktop shortcut for me, called "win vim" using the "custom.ico" file. When I click the shortcut, it's supposed to run english.ahk in elevated mode without warning me or asking anything.
+Here's the code you previously wrote for me
+
+setup_winvim.ps1:
+
+# Ensure script is run as admin
+if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Error "Please run this script as Administrator."
+    exit
+}
+
+# Step 1: Create C:\custom if it doesn't exist
+$customPath = "C:\custom"
+if (-not (Test-Path $customPath)) {
+    New-Item -Path $customPath -ItemType Directory | Out-Null
+    Write-Host "Created folder: $customPath"
+} else {
+    Write-Host "Folder already exists: $customPath"
+}
+
+# Step 2: Copy english.ahk and persian.ahk to C:\custom
+$filesToCopy = @("english.ahk", "persian.ahk")
+foreach ($file in $filesToCopy) {
+    $sourceFile = "$PSScriptRoot\$file"
+    $targetFile = "$customPath\$file"
+    if (-not (Test-Path $sourceFile)) {
+        Write-Warning "$file not found in script directory. Skipping..."
+        continue
+    }
+    Copy-Item -Path $sourceFile -Destination $targetFile -Force
+    Write-Host "Copied $file to $customPath"
+}
+
+# Step 3: Create shortcut on current user's Desktop
+$desktop = "$env:USERPROFILE\Desktop"
+$shortcutPath = "$desktop\win vim.lnk"
+
+# Try default AHK path, fallback to common install location
+$ahkExe = "C:\Program Files\AutoHotkey\AutoHotkey.exe"
+if (-not (Test-Path $ahkExe)) {
+    $ahkExe = "C:\Program Files (x86)\AutoHotkey\AutoHotkey.exe"
+}
+if (-not (Test-Path $ahkExe)) {
+    Write-Error "AutoHotkey.exe not found. Please install AutoHotkey."
+    exit
+}
+
+$targetAHK = "$customPath\english.ahk"
+if (-not (Test-Path $targetAHK)) {
+    Write-Error "english.ahk not found in $customPath"
+    exit
+}
+
+$iconPath = "$PSScriptRoot\custom.ico"
+$WshShell = New-Object -ComObject WScript.Shell
+$shortcut = $WshShell.CreateShortcut($shortcutPath)
+$shortcut.TargetPath = $ahkExe
+$shortcut.Arguments = "`"$targetAHK`""
+$shortcut.WorkingDirectory = $customPath
+$shortcut.WindowStyle = 1
+$shortcut.Description = "Run english.ahk with AutoHotkey"
+
+if (Test-Path $iconPath) {
+    $shortcut.IconLocation = $iconPath
+} else {
+    Write-Warning "Icon file not found. Using default icon."
+}
+
+$shortcut.Save()
+Write-Host "Shortcut created at: $shortcutPath"
+
+# Step 4: Create scheduled task for english.ahk
+$taskName = "ElevatedAHK"
+$action = New-ScheduledTaskAction -Execute $ahkExe -Argument "`"$targetAHK`""
+$trigger = New-ScheduledTaskTrigger -AtLogOn
+$principal = New-ScheduledTaskPrincipal -UserId "$env:USERNAME" -LogonType Interactive -RunLevel Highest
+
+Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Principal $principal -Force
+Write-Host "Scheduled task 'ElevatedAHK' created successfully."

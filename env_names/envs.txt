@@ -1,0 +1,16 @@
+path
+
+%USERPROFILE%\AppData\Local\Programs\Python\Python311\Scripts\
+%USERPROFILE%\AppData\Local\Programs\Python\Python311\
+%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Program Files\WindowsTerminal\
+
+user envs:
+F:\apps\Telegram
+C:\Program Files\Hiddify
+
+
+system envs:
+C:\Windows\terminal-1.18.1462.0\
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\

@@ -1,0 +1,2 @@
+another improvement:
+refactor setup_winvim.ps1 so that after doing all the previous things successfully, it also adds "custom" folder to %path% (system path) and also add some configuration files to the custom folder so that when I run "english" either on cmd or powershell, english.ahk file is run in elevated and also silent mode, and when I run "persian", file "persian.ahk" is run in the same way.

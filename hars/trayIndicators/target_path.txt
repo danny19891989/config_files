@@ -1,0 +1,4 @@
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+
+or run the following windows run command:
+shell:common startup

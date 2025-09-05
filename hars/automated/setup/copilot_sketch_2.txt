@@ -1,0 +1,2 @@
+It's not quite working as intended, because when I click on "win vim" desktop shortcut, it pops up saying: "Could not close the previous instance of this script. Keep waiting?" with the options "Yes" and "No".
+Refactor setup_winvim.ps1 so that, if some instance of english.ahk is running, it just exits the previous one, then run it again in elevated mode silently.
